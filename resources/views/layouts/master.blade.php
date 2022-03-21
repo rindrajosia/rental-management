@@ -8,6 +8,7 @@
   <title>AdminLTE 3 | Starter</title>
 
   <link rel="stylesheet" href="{{mix("css/app.css")}}">
+  @livewireStyles
 </head>
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
@@ -316,5 +317,6 @@
   </div>
 
   <script src="{{mix("js/app.js")}}"></script>
+  @livewireScripts
 </body>
 </html>
