@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Authorization extends Model
 {
     use HasFactory;
+
+
+    public function users(){
+      return $this->belongsToMany(User::class, "user_authorisation", "authorization_id", "user_id");
+    }
 }
