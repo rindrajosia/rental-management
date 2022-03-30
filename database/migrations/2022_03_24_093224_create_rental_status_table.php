@@ -15,7 +15,7 @@ class CreateRentalStatusTable extends Migration
     {
         Schema::create('rental_status', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
+            $table->string("name")->unique();
         });
     }
 

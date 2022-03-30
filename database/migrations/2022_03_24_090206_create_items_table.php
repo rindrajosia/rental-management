@@ -19,8 +19,10 @@ class CreateItemsTable extends Migration
             $table->string("serialNum");
             $table->string("imageUrl")->nullable();
             $table->boolean("isAvailable")->default(1);
+            $table->foreignId("item_type_id")->constrained();
             $table->timestamps();
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -30,6 +32,10 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
+        Schema::table('items', function (Blueprint $table){
+          $table->dropForeign("item_type_id");
+        });
+        
         Schema::dropIfExists('items');
     }
 }

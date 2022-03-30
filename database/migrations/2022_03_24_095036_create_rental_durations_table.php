@@ -15,8 +15,8 @@ class CreateRentalDurationsTable extends Migration
     {
         Schema::create('rental_durations', function (Blueprint $table) {
             $table->id();
-            $table->string("label");
-            $table->time("valueInHour");
+            $table->string("label")->unique();
+            $table->integer("valueInHour");
         });
     }
 

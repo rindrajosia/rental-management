@@ -21,9 +21,9 @@ class CreateClientsTable extends Migration
             $table->date('dateOfBirth');
             $table->string('placeOfBirth');
             $table->string('nationality');
-            $table->string('ville');
-            $table->string('pays');
-            $table->string('adresse');
+            $table->string('city');
+            $table->string('country');
+            $table->string('address');
             $table->string('telephone1');
             $table->string('telephone2')->nullable();
             $table->string('idDocument');
