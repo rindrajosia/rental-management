@@ -24,10 +24,10 @@ class CreateClientsTable extends Migration
             $table->string('city');
             $table->string('country');
             $table->string('address');
-            $table->string('telephone1');
+            $table->string('telephone1')->unique();
             $table->string('telephone2')->nullable();
             $table->string('idDocument');
-            $table->string('numId');
+            $table->string('numId')->unique();
             $table->timestamps();
         });
     }

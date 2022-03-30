@@ -33,10 +33,10 @@ class ClientFactory extends Factory
             "city" => $city,
             "country" => $country,
             "address" => $this->faker->address,
-            "telephone1" => $this->faker->phoneNumber,
-            "telephone2" => $this->faker->phoneNumber,
+            "telephone1" => $this->faker->unique()->phoneNumber,
+            "telephone2" => $this->faker->unique()->phoneNumber,
             "idDocument" => array_rand(["ID card", "Passport", "Driver license"], 1),
-            "numId" => $this->faker->creditCardNumber,
+            "numId" => $this->faker->unique()->creditCardNumber,
         ];
     }
 }

@@ -27,3 +27,7 @@ Route::get('/articles', function () {
 Route::get('/types', function () {
     return ItemType::with("items")->paginate(5);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

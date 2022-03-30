@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Item;
+use App\Models\User;
 use App\Models\Client;
 use Illuminate\Database\Seeder;
 
@@ -17,6 +18,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(ItemTypeTableSeeder::class);
         // \App\Models\User::factory(10)->create();
+        User::factory(10)->create();
         Item::factory(10)->create();
         Client::factory(10)->create();
         $this->call(RentalDurationTableSeeder::class);
