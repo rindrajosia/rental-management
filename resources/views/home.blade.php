@@ -1,3 +1,4 @@
+@if(false)
 @extends('layouts.app')
 
 @section('content')
@@ -20,4 +21,11 @@
         </div>
     </div>
 </div>
+@endsection
+@endif
+
+@extends("layouts.master")
+
+@section("content")
+  Hello world
 @endsection

@@ -2,6 +2,7 @@
 
 use App\Models\Item;
 use App\Models\ItemType;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,18 +18,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/articles', function () {
-    return Item::with("type")->paginate(5);
-});
-
-Route::get('/types', function () {
-    return ItemType::with("items")->paginate(5);
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
